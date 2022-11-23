@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hz1 {
+        position: absolute;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        top: 0px;
+        background-color: pink;
+        border-radius: 50%;
+        }
+        .hz2 {
+        position: absolute;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        top: 100px;
+        background-color: red;
+        border-radius: 50%;
+        }
+        .hz3 {
+        position: absolute;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        top: 200px;
+        background-color: blue;
+        border-radius: 50%;
+        }
+    
+    </style>
+</head>
+<body>
+<div class="hz1"></div>
+<div class="hz2"></div>
+<div class="hz3"></div>
+<script>
+let div1=document.querySelector('.hz1');
+let div2=document.querySelector('.hz2');
+let div3=document.querySelector('.hz3');
+let step = (time,obj) => {
+return new Promise((resolve) => {
+setTimeout(() => {var timer=setInterval(function() {
+if(obj.offsetLeft>=400){
+clearInterval(timer);
+}
+obj.style.left=obj.offsetLeft+2+'px';
+},30);
+resolve();
+    }, time);
+  });
+};
+async function demo() {
+  let word1 = await step(0,div1);
+  let word2 = await step(6000,div2);
+  let word3 = await step(6000,div3);
+  return "函数执行完成";
+}
+demo().then((res) => {
+  console.log(res);//函数执行完成
+});
+</script>                                                        
+    
+</body>                                                                      
+</html>

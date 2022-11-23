@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hz1 {
+        position: absolute;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        top: 0px;
+        background-color: pink;
+        border-radius: 50%;
+        }
+        .hz2 {
+        position: absolute;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        top: 100px;
+        background-color: red;
+        border-radius: 50%;
+        }
+        .hz3 {
+        position: absolute;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        top: 200px;
+        background-color: blue;
+        border-radius: 50%;
+        }
+    
+    </style>
+</head>
+<body>
+<div class="hz1"></div>
+<div class="hz2"></div>
+<div class="hz3"></div>
+<script>
+let div1=document.querySelector('.hz1');
+let div2=document.querySelector('.hz2');
+let div3=document.querySelector('.hz3');
+function move(obj,target){
+    var mv=setTimeout(function(){var timer=setInterval(function() {
+if(obj.offsetLeft>=target){
+clearInterval(timer);
+}
+obj.style.left=obj.offsetLeft+2+'px';
+},30)},);};
+
+move(div1,400)
+var move2=setTimeout(function(){var timer=setInterval(function() {
+if(div2.offsetLeft>=400){
+clearInterval(timer);
+}
+div2.style.left=div2.offsetLeft+2+'px';
+},30)},6000);
+var move3=setTimeout(function(){var timer=setInterval(function() {
+if(div3.offsetLeft>=400){
+clearInterval(timer);
+}
+div3.style.left=div3.offsetLeft+2+'px';
+},30)},12000);
+
+
+
+
+
+
+
+</script>                                                        
+    
+</body>                                                                      
+</html>
